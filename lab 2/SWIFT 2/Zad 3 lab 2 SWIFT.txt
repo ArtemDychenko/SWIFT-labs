@@ -1,0 +1,32 @@
+ func minmax(_ a: Int, _ b: Int) -> (Int, Int) {
+     let tuple = (a,b)
+     return tuple
+ }
+ 
+ print(minmax(3, 4))
+ 
+ var stringsArray = ["gdansk", "university", "gdansk", "university", "university",
+"of", "technology", "technology", "gdansk", "gdansk"]
+
+
+
+func counter(_ a: [String]) -> [(String, Int)] {
+    var counter: [(String, Int)] = []
+   
+    for word in stringsArray {
+         var mark = 0
+        for i in 0..<counter.count{
+            if counter[i].0 == word {
+                counter[i].1+=1
+                mark = 1
+            }
+        }
+        if mark == 0 {
+            counter.append((word, 1))
+        }
+    }
+    return counter
+}
+
+var result = counter(stringsArray)
+print(result)
